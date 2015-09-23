@@ -1,3 +1,6 @@
+#Clase que representa un clasificador bayesiano definido por un conjunto de entrenamiento
+#definido como un vector de identificadores y una matriz de datos correspondientes (preprocesados).
+
 import numpy as np
 from collections import Counter
 

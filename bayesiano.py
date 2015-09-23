@@ -1,3 +1,6 @@
+#Clase que representa un clasificador bayesiano definido por un conjunto de entrenamiento
+#definido como un vector de identificadores y una matriz de datos correspondientes (preprocesados).
+
 import numpy as np
 from collections import Counter
 
@@ -11,8 +14,10 @@ class Bayesiano:
 		return resultado
 
 	def __init__(self,entren,ident):
+		#Creo una matriz que corresponde cada identificador con su vector de datos y la ordeno
 		matriz=[[ident[i]]+entren[i] for i in range(len(entren))]
 		matriz.sort()
+		#Cuento la cantidad de elementos de cada clase (con un mismo identificador)
 		resultado=Counter([i[0] for i in matriz]).items()
 		cuenta=dict(resultado)
 		self.clases=cuenta.keys()
